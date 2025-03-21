@@ -1,0 +1,3 @@
+fa744bffa751a2232b88fce5458224f2
+
+api-football key = 854d271e80bbf4289dcbc0b32cd16782

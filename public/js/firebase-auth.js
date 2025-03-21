@@ -25,88 +25,131 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-try {
-    const app = initializeApp(firebaseConfig);
-    console.log("🔥 Firebase has been initialized successfully:", app);
+const app = initializeApp(firebaseConfig);
+console.log("🔥 Firebase initialized successfully:", app);
+
+// Initialize Authentication
+const auth = getAuth(app);
+console.log("✅ Firebase Authentication ready:", auth);
+
+onAuthStateChanged(auth, (user) => {
+    const authButtons = document.querySelector(".auth-buttons");
     
-    // Initialize Auth
-    const auth = getAuth(app);
-    console.log("✅ Firebase Authentication is ready:", auth);
+    if (authButtons) {
+        if (user) {
+            // User is signed in, show profile icon and logout button
+            authButtons.innerHTML = `
+                <div class="user-profile">
+                    <img src="${user.photoURL || '../../assets/profile.png'}" alt="Profile" class="profile-icon">
+                   
+                </div>
+            `;
 
-    // Wait until DOM is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-        // Get Elements
-        const signupBtn = document.getElementById("signup");
-        const signinBtn = document.getElementById("signin");
-        const signoutBtn = document.getElementById("signout");
-        const googleSigninBtn = document.getElementById("google-signin");
+            // // Add logout event listener
+            // document.querySelector(".btn-logout").addEventListener("click", () => {
+            //     signOut(auth).then(() => {
+            //         console.log("User signed out.");
+            //     }).catch((error) => {
+            //         console.error("Logout error:", error);
+            //     });
+            // });
 
-        if (!signupBtn || !signinBtn || !signoutBtn || !googleSigninBtn) {
-            console.error("❌ One or more buttons not found in the DOM.");
-            return;
+        } else {
+            // No user signed in, show sign-up and login buttons
+            authButtons.innerHTML = `
+                <a href="../src/pages/auth/signup.html" class="btn-signup">Sign Up</a>
+                <a href="../src/pages/auth/login.html" class="btn-login">Login</a>
+            `;
         }
+    } else {
+        console.error("❌ Auth buttons container not found.");
+    }
+});
 
-        // Sign Up
-        signupBtn.addEventListener("click", () => {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+
+// Wait until the page has fully loaded
+window.addEventListener("load", () => {
+    console.log("✅ DOM fully loaded. Attaching event listeners...");
+
+    // Get elements
+    const signupBtn = document.getElementById("signup");
+    const signinBtn = document.getElementById("signin");
+    const signoutBtn = document.getElementById("signout");
+    const googleSigninBtn = document.getElementById("google-signin");
+
+    // Input fields
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    // Ensure elements exist before adding event listeners
+    if (!signupBtn && !signinBtn && !signoutBtn && !googleSigninBtn) {
+        console.error("❌ One or more buttons not found in the DOM. Check your HTML file.");
+        return;
+    }
+
+    // Sign Up
+    if (signupBtn) {
+        signupBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const email = emailInput.value;
+            const password = passwordInput.value;
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then(userCredential => {
                     console.log("✅ User signed up:", userCredential.user);
+                    window.location.href = "../../../../public/index.html"; // Redirect
                 })
-                .catch(error => {
-                    console.error("❌ Error:", error.message);
-                });
+                .catch(error => console.error("❌ Error:", error.message));
         });
+    }
 
-        // Sign In
-        signinBtn.addEventListener("click", () => {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+    // Sign In
+    if (signinBtn) {
+        signinBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const email = emailInput.value;
+            const password = passwordInput.value;
 
             signInWithEmailAndPassword(auth, email, password)
                 .then(userCredential => {
                     console.log("✅ User signed in:", userCredential.user);
+                    window.location.href = "../../../../public/index.html"; // Redirect
                 })
-                .catch(error => {
-                    console.error("❌ Error:", error.message);
-                });
+                .catch(error => console.error("❌ Error:", error.message));
         });
+    }
 
-        // Sign Out
+    // Sign Out
+    if (signoutBtn) {
         signoutBtn.addEventListener("click", () => {
             signOut(auth)
                 .then(() => {
                     console.log("✅ User signed out");
+                    window.location.href = "../../../../public/index.html"; // Redirect
                 })
-                .catch(error => {
-                    console.error("❌ Error:", error.message);
-                });
+                .catch(error => console.error("❌ Error:", error.message));
         });
+    }
 
-        // Google Sign-In
+    // Google Sign-In
+    if (googleSigninBtn) {
         const provider = new GoogleAuthProvider();
         googleSigninBtn.addEventListener("click", () => {
             signInWithPopup(auth, provider)
                 .then(result => {
                     console.log("✅ User signed in with Google:", result.user);
+                    window.location.href = "../../../../public/index.html"; // Redirect
                 })
-                .catch(error => {
-                    console.error("❌ Error:", error.message);
-                });
+                .catch(error => console.error("❌ Error:", error.message));
         });
+    }
 
-        // Monitor Authentication State
-        onAuthStateChanged(auth, user => {
-            if (user) {
-                console.log("✅ User is logged in:", user);
-            } else {
-                console.log("ℹ️ No user is logged in");
-            }
-        });
+    // Monitor Authentication State
+    onAuthStateChanged(auth, user => {
+        if (user) {
+            console.log("✅ User is logged in:", user);
+        } else {
+            console.log("ℹ️ No user is logged in");
+        }
     });
-
-} catch (error) {
-    console.error("❌ Firebase initialization failed:", error);
-}
+});

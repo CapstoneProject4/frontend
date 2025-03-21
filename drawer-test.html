@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPSarena - Test Page</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Header styles */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background-color: white;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .menu-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .menu-btn {
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .logo img {
+            max-height: 40px;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-signup, .btn-login {
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #0066ff;
+            color: white;
+            border-radius: 4px;
+        }
+        
+        /* Navigation drawer styles */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+        }
+        
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: -280px; /* Start off-screen */
+            width: 280px;
+            height: 100%;
+            background-color: white;
+            z-index: 999;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+        }
+        
+        .drawer.open {
+            left: 0;
+        }
+        
+        body.drawer-open .drawer-overlay {
+            display: block;
+        }
+        
+        /* Logo container */
+        .drawer-logo {
+            padding: 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .drawer-logo img {
+            max-height: 40px;
+        }
+        
+        /* Navigation links */
+        .drawer-nav ul {
+            list-style: none;
+        }
+        
+        .drawer-nav li {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .drawer-nav a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            background-color: #0066ff;
+            color: white;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 20px;
+        }
+        
+        /* Content area */
+        .content {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="menu-logo">
+            <div class="menu-btn" onclick="toggleDrawer()">☰</div>
+            <div class="logo">
+                <!-- Replace with your actual logo path -->
+                <span style="font-weight: bold; font-size: 20px;">TIPS<span style="color: #0066ff;">arena</span></span>
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="#" class="btn-signup">Sign Up</a>
+            <a href="#" class="btn-login">Login</a>
+        </div>
+    </header>
+    
+    <!-- Drawer overlay -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    
+    <!-- Navigation drawer -->
+    <div class="drawer" id="drawer">
+        <div class="drawer-logo">
+            <!-- Replace with your actual logo path -->
+            <span style="font-weight: bold; font-size: 20px;">TIPS<span style="color: #0066ff;">arena</span></span>
+        </div>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Predictions</a></li>
+                <li><a href="#">Live Line</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Page content -->
+    <main class="content">
+        <h1>Test Page</h1>
+        <p>Click the menu icon (☰) in the top left to open the drawer.</p>
+    </main>
+    
+    <script>
+        // Toggle the navigation drawer
+        function toggleDrawer() {
+            console.log("Toggle drawer called"); // Debug logging
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            drawer.classList.toggle('open');
+            document.body.classList.toggle('drawer-open');
+        }
+        
+        // Set up click event for overlay
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('drawer-overlay');
+            overlay.addEventListener('click', toggleDrawer);
+        });
+    </script>
+</body>
+</html>

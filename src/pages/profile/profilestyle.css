@@ -1,0 +1,87 @@
+
+/* Style for the whole profile block*/
+.profile{
+    text-align: center;
+}
+.blue_border{
+  background-color:deepskyblue;
+  height: 180px;
+  width: 100%;
+  
+}
+/*Style for the active button*/
+  .active{
+    padding-right: 30px;
+    font-weight: 100;
+    font-size: large;
+  }
+  .activation {
+    display: flex;
+    align-items: center; 
+    float: right;
+  }
+  .green_box {
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    margin-left: 30px; 
+    margin-right: 7px;
+  }
+/* Style for the logo in the blue box*/
+  .profile_logo{
+    background-color:lightgray;
+    border-radius: 50%;
+    height: 120px;
+    width: 140px;
+    margin-top: -70px;
+  }
+
+
+
+/*Style for the image and elements*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Image width auto, text takes remaining */
+    grid-template-rows: auto auto; /* 2 rows for the text items */
+    gap:30px; /* Space between grid items */
+}
+
+.grid-image {
+    /* Style image */
+    grid-row: 1 / 3; /* Image spans both text rows */
+    max-width: 200px;
+    height: auto;
+    align-self: center;
+    padding-left: 50px;
+}
+
+.grid-item1 {
+    /* Style item1 */
+    grid-column: 2;
+    grid-row: 1;
+    border: none;
+    padding-bottom: 0%;
+}
+.grid-item2{
+  /* Style item 2*/
+  font-size: larger;
+  padding-top: -20px;
+}
+.username_input{
+  /* Style username input box*/
+  border-style:hidden;
+  font-size: large;
+}
+.no_input{
+  /* Style phone number input box*/
+  border-style:hidden;
+  font-size: large;
+}
+/* Style log out link*/
+.log_out{
+  text-align: right;
+  color: black;
+}
+.log_out:hover{
+  color: blue;
+}

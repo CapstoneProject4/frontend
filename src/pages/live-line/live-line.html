@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPS Arena - Live Line</title>
+    <link rel="stylesheet" href="live-line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>    
+        <div class="logo">
+            <img src="../../../assets/TIPSarena.png" alt="TIPSarena Logo">
+        </div>
+          
+        <div class="menu-logo">
+            <div class="menu-btn" onclick="toggleDrawer()">☰</div>
+
+            <!-- Drawer overlay -->
+            <div class="drawer-overlay" id="drawer-overlay"></div>
+
+            <!-- Navigation drawer -->
+            <div class="drawer" id="drawer">
+                <div class="drawer-logo">
+                    <!-- <img src="../../assets/TIPSarena.png" alt="TIPSarena Logo"> -->
+                </div>
+                <nav class="drawer-nav">
+                    <ul>
+                        <li><a href="../../../public/index.html">Home</a></li>
+                        <li><a href="predictions.html">Predictions</a></li>
+                        <li><a href="live-line.html">Live Line</a></li>
+                        <li><a href="../stories/tipsarena.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Live Line-->
+    <div class="active">
+        <i class="fas fa-satellite-dish"></i> 
+        <span class="live-text">LIVE</span> 
+        <span class="line-text">LINE</span>
+    </div>
+      
+    <main>
+        <section class="live-scores">
+            <!-- Live matches will be loaded here -->
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                Loading live matches...
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,9 +1,21 @@
-<nav class="bg-blue-500 text-white p-4">
-    <div class="container mx-auto flex justify-between">
-        <a href="/public/index.html" class="text-lg font-bold">TipsArena</a>
-        <ul class="flex space-x-4">
-            <li><a href="../src/pages/home.html" class="hover:underline">Home</a></li>
-            <li><a href="../src/pages/about.html" class="hover:underline">About</a></li>
-        </ul>
+<!-- Reusable Header Component -->
+<header class="site-header">
+    <div class="menu-logo">
+      <div class="menu-btn" onclick="toggleDrawer()">☰</div>
+      <div class="logo">
+        <img src="../../assets/TIPSarena.png" alt="TIPSarena Logo">
+      </div>
     </div>
-</nav>
+
+    <!-- <div class="auth-buttons">
+        <a href="../src/pages/auth/signup.html" class="btn-signup">Sign Up</a>
+        <a href="../src/pages/auth/login.html" class="btn-login">Login</a>
+    </div> -->
+    <div class="auth-buttons">
+        <a href="../pages/profile/profile.html">
+            <img id="profile-image" class="profile-icon" src="../../assets/profile.png" alt="Profile" style="display: none;">
+        </a>        
+        <a href="../src/pages/auth/signup.html" class="btn-signup">Sign Up</a>
+        <a href="../src/pages/auth/login.html" class="btn-login">Login</a>
+    </div>
+</header>
