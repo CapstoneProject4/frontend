@@ -1,0 +1,286 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 2px solid #ddd;
+}
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: blue;
+}
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background-color: white;
+    
+     position: relative; /* Make the parent container relative */
+     min-height: 100vh; /* Ensures the main section covers the full viewport */
+    padding-bottom: 150px;
+
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* News Section */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+   
+}
+
+.news-card {
+    display: flex;
+   
+  
+    overflow: hidden;
+    
+}
+
+
+
+.news-content {
+    padding: 10px;
+
+ 
+}
+.news-content:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+.news-content h3 {
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #555;
+}
+.thumbnail{
+    max-width: 150px;
+    height: auto;
+    margin-right: 15px;
+}
+
+
+    hr {
+        border: none;
+        height: 1px;
+        background: #ccc;
+        margin: 10px 0; /* Adjust spacing above and below */
+        width: 100%;
+}
+
+
+.match-summary {
+    
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    width: 600px; /* Adjust width as needed */
+    
+    border-radius: 8px;
+    
+    margin-top: 2px;
+    margin-bottom: 0px;
+    padding: 15px; 
+     
+}
+
+
+
+
+
+/* Match Header */
+.match-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.match-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.match-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.matchday {
+    font-size: 12px;
+    color: #666;
+}
+
+.completed {
+    background: white;
+    color: black;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+    margin-top: 5px;
+}
+
+/* Match Score */
+.match-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid , white;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+/* Team Names & Logos */
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.team img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Score Box */
+.score-box {
+    display: flex;
+    gap: 5px;
+    background-color: white;
+}
+
+.score {
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+/* Navigation drawer styles */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Start off-screen */
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+}
+
+.drawer.open {
+    left: 0;
+}
+
+body.drawer-open .drawer-overlay {
+    display: block;
+}
+
+/* Logo container */
+.drawer-logo {
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawer-logo img {
+    max-height: 40px;
+}
+
+/* Navigation links */
+.drawer-nav ul {
+    list-style: none;
+}
+
+.drawer-nav li {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawer-nav a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: #0066ff;
+    color: white;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 20px;
+}

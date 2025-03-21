@@ -170,7 +170,7 @@ function startAutoRefresh() {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
-    fetchLiveMatches();
+ //   fetchLiveMatches();
 
     // Add refresh button functionality if needed
     const refreshButton = document.createElement('button');
