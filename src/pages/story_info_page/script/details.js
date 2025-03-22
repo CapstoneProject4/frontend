@@ -84,7 +84,12 @@ function toggleDrawer() {
 }
 
 // Close drawer when clicking outside
-document.getElementById("drawer-overlay").addEventListener("click", function () {
-    document.getElementById("drawer").classList.remove("open");
-    document.body.classList.remove("drawer-open");
-});
+document.getElementById('drawer-overlay').addEventListener('click', function() {
+    document.getElementById('drawer').classList.remove('open');
+    document.body.classList.remove('drawer-open');
+});  
+
+fetch("../../components/footer.html")
+.then(response => response.text())
+.then(data => document.getElementById("footer").innerHTML = data)
+.catch(error => console.error("Error loading footer:", error));
