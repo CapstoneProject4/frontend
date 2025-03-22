@@ -221,3 +221,51 @@ nav ul li a:hover {
         font-size: 1rem;
     }
 }
+
+/* Footer Section */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #f8c12c;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f8c12c;
+}
+
+.responsible-gambling {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
