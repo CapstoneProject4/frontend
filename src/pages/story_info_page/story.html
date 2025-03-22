@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Story Details - TIPSarena</title>
-    <link rel="stylesheet" href="story.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="story.css" />
 </head>
 <body>
-    <!-- Header -->
     <header>
-       
         <div class="logo">
             <img src="../../../assets/TIPSarena.png" alt="TIPSarena Logo">
-          </div>
-          
-          <div class="menu-logo">
-            <div class="menu-btn" onclick="toggleDrawer()">☰</div>
-    </header>
-    
-    <div class="top-stories">
-        Top stories
-    </div>
-
-    <main>
-       <div class="storypage">
-        <h1 class="story-title">
-            Omar Marmoush, Randal Kolo Muani, Lloyd Kelly:  
-            Eight stars set to make their UEFA Champions League debuts
-        </h1>
-
-        <!-- Content -->
-        <p class="story-content">
-            The January transfer window was a busy one for some of Europe's biggest clubs,  
-            including Manchester City and Juventus, who are both in action in this week's  
-            UEFA Champions League play-offs.
-        </p>
-
-        <p class="story-content">
-            Several new signings will likely feature for both clubs, while Paris Saint-Germain  
-            and Celtic also made notable additions as they look to reach the Champions League  
-            last 16.
-        </p>
-
-        <!-- Image in the middle -->
-        <div class="story-image">
-            <img src="images1/36d45cd21272c5f2f3e024e1058a3af4.png" alt="Champions League Stars">
         </div>
+          
+        <div class="menu-logo">
+            <div class="menu-btn" onclick="toggleDrawer()">☰</div>
 
-        <p class="story-content">
-            The UEFA Champions League returns this week as the new-look format enters the  
-            knockout stage, beginning with the play-offs.
-        </p>
-       </div> <!-- Headline -->
+            <!-- Drawer overlay -->
+            <div class="drawer-overlay" id="drawer-overlay"></div>
+
+            <!-- Navigation drawer -->
+            <div class="drawer" id="drawer">
+                <div class="drawer-logo">
+                    <!-- <img src="../../assets/TIPSarena.png" alt="TIPSarena Logo"> -->
+                </div>
+                <nav class="drawer-nav">
+                    <ul>
+                        <li><a href="../../../public/index.html">Home</a></li>
+                        <li><a href="../predictions/predictions.html">Predictions</a></li>
+                        <li><a href="../live-line/live-line.html">Live Line</a></li>
+                        <li><a href="tipsarena.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="storypage">
+        <h1 id="story-title"></h1>
+        <p id="story-content"></p>
+        <img id="story-image" alt="Story Image" />
+        <hr class="divider">
+        
+        <p id="story-paragraph1"></p>
+        <p id="story-paragraph2"></p>
+        <p id="story-paragraph3"></p>
         
     </main>
+
+    <script src="./script/details.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("TipsArena Loaded!");
 
-    const apiKey = "";
-  //  "fa744bffa751a2232b88fce5458224f2"; // Replace with your actual API key
+    const apiKey = 
+     "";
+   // "fa744bffa751a2232b88fce5458224f2"; // Replace with your actual API key
 
     // 🔹 Major Leagues & International Competitions
     const leagues = [
@@ -161,5 +162,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 🏁 Fetch Data on Page Load
   //  fetchLiveScores();
-  //  fetchOdds();
+    fetchOdds();
 });

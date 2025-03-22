@@ -1,3 +1,5 @@
 fa744bffa751a2232b88fce5458224f2
 
 api-football key = 854d271e80bbf4289dcbc0b32cd16782
+
+news-api key =  ce82bfefafb94d3f96eee7652a5b719a
