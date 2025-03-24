@@ -15,7 +15,7 @@ document.getElementById('drawer-overlay').addEventListener('click', function() {
 });
 
 
- // const API_KEY = "ce82bfefafb94d3f96eee7652a5b719a";
+  const API_KEY = "ce82bfefafb94d3f96eee7652a5b719a";
 const container = document.getElementById("news-container");
 
 // Fetch football news from News API

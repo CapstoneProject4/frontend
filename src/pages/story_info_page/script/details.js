@@ -1,3 +1,25 @@
+
+// Toggle the navigation drawer
+function toggleDrawer() {
+    const drawer = document.getElementById("drawer");
+    const drawerOverlay = document.getElementById("drawer-overlay");
+    const body = document.body;
+
+    drawer.classList.toggle("open");
+    body.classList.toggle("drawer-open");
+}
+
+// Close drawer when clicking outside
+document.getElementById('drawer-overlay').addEventListener('click', function() {
+    document.getElementById('drawer').classList.remove('open');
+    document.body.classList.remove('drawer-open');
+});  
+fetch("../../components/footer.html")
+.then(response => response.text())
+.then(data => document.getElementById("footer").innerHTML = data)
+.catch(error => console.error("Error loading footer:", error));
+
+
 const selectedStory = JSON.parse(localStorage.getItem("selectedStory"));
 
 if (selectedStory) {
@@ -73,23 +95,3 @@ if (selectedStory) {
     document.querySelector(".storypage").innerHTML = "<p>Story not found.</p>";
 }
 
-// Toggle the navigation drawer
-function toggleDrawer() {
-    const drawer = document.getElementById("drawer");
-    const drawerOverlay = document.getElementById("drawer-overlay");
-    const body = document.body;
-
-    drawer.classList.toggle("open");
-    body.classList.toggle("drawer-open");
-}
-
-// Close drawer when clicking outside
-document.getElementById('drawer-overlay').addEventListener('click', function() {
-    document.getElementById('drawer').classList.remove('open');
-    document.body.classList.remove('drawer-open');
-});  
-
-fetch("../../components/footer.html")
-.then(response => response.text())
-.then(data => document.getElementById("footer").innerHTML = data)
-.catch(error => console.error("Error loading footer:", error));
