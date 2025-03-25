@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // Mock API fetch implementation
-    const apiKey = "854d271e80bbf4289dcbc0b32cd16782";
+    const apiKey = "991a960e55680d97acd63adda8372ff2";
     const apiUrl = "https://v3.football.api-sports.io/fixtures?live=all";
     
     async function fetchLiveMatches() {
