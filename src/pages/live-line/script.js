@@ -15,7 +15,7 @@ document.getElementById('drawer-overlay').addEventListener('click', function() {
 });
 
 // API configuration
-const apiKey = "854d271e80bbf4289dcbc0b32cd16782";
+const apiKey = "b778a3ba40bdde749b267e9707948c28";
 const apiUrl = "https://v3.football.api-sports.io/fixtures?live=all";
 
 // Function to fetch live matches
@@ -170,7 +170,7 @@ function startAutoRefresh() {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
- //   fetchLiveMatches();
+    fetchLiveMatches();
 
     // Add refresh button functionality if needed
     const refreshButton = document.createElement('button');
