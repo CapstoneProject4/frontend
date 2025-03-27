@@ -1,0 +1,274 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* Drawer */
+/* Navigation drawer styles */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -280px; /* Start off-screen */
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+}
+
+.drawer.open {
+    right: 0;
+}
+
+body.drawer-open .drawer-overlay {
+    display: block;
+}
+
+/* Logo container */
+.drawer-logo {
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawer-logo img {
+    max-height: 40px;
+}
+
+/* Navigation links */
+.drawer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.drawer-nav li {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawer-nav a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: #0066ff;
+    color: white;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 20px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+.divider {
+    border: none;
+    border-top: 1px solid #ccc; 
+    margin: 0.5rem 0 1rem 0; 
+}
+
+
+.top-stories-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+
+.storypage {
+    max-width: 960px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.storypage h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+
+
+.storypage img {
+    width: 100%;
+    max-width: 700px; 
+    max-height: 400px; 
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem auto; 
+    display: block; 
+    object-fit: cover; 
+}
+
+
+.storypage p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .storypage {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .storypage h1 {
+        font-size: 2rem;
+    }
+
+    .storypage p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .storypage h1 {
+        font-size: 1.7rem;
+    }
+
+    .storypage p {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Section */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #f8c12c;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f8c12c;
+}
+
+.responsible-gambling {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+

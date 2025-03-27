@@ -1,0 +1,450 @@
+/* Base Styles */
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #f5f5f5;
+    --border-color: #e0e0e0;
+    --text-color: #333;
+    --active-color: #ff6600;
+    --nav-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+/* Drawer */
+/* Navigation drawer styles */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -280px; /* Start off-screen */
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+}
+
+.drawer.open {
+    right: 0;
+}
+
+body.drawer-open .drawer-overlay {
+    display: block;
+}
+
+/* Logo container */
+.drawer-logo {
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawer-logo img {
+    max-height: 40px;
+}
+
+/* Navigation links */
+.drawer-nav ul {
+    list-style: none;
+}
+
+.drawer-nav li {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.drawer-nav a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: #0066ff;
+    color: white;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 20px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+/* Live Line Header */
+
+
+@import url('https://fonts.cdnfonts.com/css/pilat-extended');
+.active {
+  font-family: 'Pilat Extended', sans-serif; /* Apply Pilat Extended font */
+  display: flex;
+  align-items: center;
+  font-size: 30px; /* Adjust font size */
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.live-text {
+  color: red; /* Color for LIVE */
+  margin-left: 5px; /* Add spacing */
+  font-weight: bold;
+}
+
+.line-text {
+  color: blue; /* Color for LINE */
+  margin-left: 3px; /* Add spacing */
+  font-weight: bold;
+}
+
+/* Refresh button */
+.refresh-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    margin: 15px 0 15px 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+    background-color: #0055aa;
+}
+
+.refresh-button i {
+    margin-right: 5px;
+}
+
+/* Loading indicators */
+.loading, .error-message, .no-matches {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+    color: var(--primary-color);
+}
+
+.error-message {
+    color: #e74c3c;
+}
+
+.no-matches {
+    color: #7f8c8d;
+}
+
+.loading i, .error-message i, .no-matches i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+  
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.live-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Match Card Styles */
+.match-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.league-name {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    color: #777;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.match-content {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.teams {
+    flex: 1;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.team:last-child {
+    margin-bottom: 0;
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.team-name {
+    font-weight: bold;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.score-home, .score-away {
+    padding: 5px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid var(--border-color);
+    padding-left: 15px;
+}
+
+.match-time {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.match-stats {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.match-stats i {
+    margin-right: 5px;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    header {
+        padding: 15px 50px;
+    }
+
+    .main-nav {
+        position: static;
+        width: auto;
+        box-shadow: none;
+        margin-top: 10px;
+    }
+
+    .main-nav ul {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .main-nav li {
+        padding: 10px 20px;
+        border-bottom: none;
+        border-left: none;
+        position: relative;
+    }
+
+    .main-nav li.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        height: 3px;
+        background-color: var(--active-color);
+    }
+
+    .live-scores {
+        margin-top: 20px;
+    }
+
+    .match-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .match-content {
+        padding: 20px;
+    }
+
+    .team-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .team-name {
+        font-size: 1.1rem;
+    }
+
+    .score {
+        font-size: 1.5rem;
+        margin: 0 30px;
+    }
+
+    .score-home, .score-away {
+        min-width: 40px;
+    }
+
+    /* Desktop-specific refresh button */
+    .refresh-button {
+        margin-left: 50px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.match-time {
+    animation: pulse 2s infinite;
+}
+
+/* Animation for refresh button */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.refresh-button.refreshing i {
+    animation: spin 1s linear infinite;
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #f8c12c;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f8c12c;
+}
+
+.responsible-gambling {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.7;
+}

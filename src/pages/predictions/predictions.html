@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPSarena - Football Predictions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="predictions.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../../assets/TIPSarena.png" alt="TIPSarena Logo">
+        </div>
+          
+        <div class="menu-logo">
+            <div class="menu-btn" onclick="toggleDrawer()">☰</div>
+
+            <!-- Drawer overlay -->
+            <div class="drawer-overlay" id="drawer-overlay"></div>
+
+            <!-- Navigation drawer -->
+            <div class="drawer" id="drawer">
+                <div class="drawer-logo">
+                    <!-- <img src="../../assets/TIPSarena.png" alt="TIPSarena Logo"> -->
+                </div>
+                <nav class="drawer-nav">
+                    <ul>
+                        <li><a href="../../../public/index.html">Home</a></li>
+                        <li><a href="predictions.html">Predictions</a></li>
+                        <li><a href="../live-line/live-line.html">Live Line</a></li>
+                        <li><a href="../story_info_page/tipsarena.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Filters Section -->
+        <section class="filters">
+            <h2 class="filter-title">Filter Predictions</h2>
+            
+            <div class="date-filter">
+                <input type="date" class="date-input" id="predictionDate" value="2025-01-16">
+            </div>
+            
+            <div class="competition-filter">
+                <button class="filter-btn active" data-competition="all">All</button>
+                <button class="filter-btn" data-competition="epl">Premier League</button>
+                <button class="filter-btn" data-competition="laliga">La Liga</button>
+                <button class="filter-btn" data-competition="bundesliga">Bundesliga</button>
+                <button class="filter-btn" data-competition="seriea">Serie A</button>
+                <button class="filter-btn" data-competition="ligue1">Ligue 1</button>
+                <button class="filter-btn" data-competition="ucl">Champions League</button>
+                <button class="filter-btn" data-competition="uel">Europa League</button>
+                <button class="filter-btn" data-competition="saudi">Saudi League</button>
+                <button class="filter-btn" data-competition="nations">Nations League</button>
+                <button class="filter-btn" data-competition="euros">Euro 2025</button>
+                <button class="filter-btn" data-competition="worldcup">World Cup</button>
+                <button class="filter-btn" data-competition="acl">Asian Champions League</button>
+                <button class="filter-btn" data-competition="copa">Copa America</button>
+                <button class="filter-btn" data-competition="afcon">AFCON</button>
+            </div>
+        </section>
+        
+        <!-- Predictions Section -->
+        <h1 class="predictions-title">Football Predictions</h1>
+        <p class="predictions-date">For Tuesday, January 16th, 2025</p>
+        
+        <div class="predictions-container">
+            <!-- Prediction Card 1 -->
+            <div class="prediction-card" data-competition="ucl">
+                <div class="prediction-header">
+                    <div class="competition">
+                        <i class="fas fa-trophy"></i>
+                        <span>Champions League</span>
+                    </div>
+                    <div class="match-time">20:00</div>
+                </div>
+                <div class="prediction-content">
+                    <div class="teams">
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Barcelona" class="team-logo">
+                            <div class="team-name">FC Barcelona</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Liverpool" class="team-logo">
+                            <div class="team-name">Liverpool FC</div>
+                        </div>
+                    </div>
+                    <div class="prediction-result">AWAY OR DRAW</div>
+                    <div class="prediction-tag">Top Pick</div>
+                </div>
+            </div>
+            
+            <!-- Prediction Card 2 -->
+            <div class="prediction-card" data-competition="ucl">
+                <div class="prediction-header">
+                    <div class="competition">
+                        <i class="fas fa-trophy"></i>
+                        <span>Champions League</span>
+                    </div>
+                    <div class="match-time">18:45</div>
+                </div>
+                <div class="prediction-content">
+                    <div class="teams">
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Manchester United" class="team-logo">
+                            <div class="team-name">Manchester United</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Atletico Madrid" class="team-logo">
+                            <div class="team-name">Atletico Madrid</div>
+                        </div>
+                    </div>
+                    <div class="prediction-result">AWAY OR DRAW</div>
+                    <div class="prediction-tag">Value Bet</div>
+                </div>
+            </div>
+            
+            <!-- Prediction Card 3 -->
+            <div class="prediction-card" data-competition="epl">
+                <div class="prediction-header">
+                    <div class="competition">
+                        <i class="fas fa-trophy"></i>
+                        <span>Premier League</span>
+                    </div>
+                    <div class="match-time">15:00</div>
+                </div>
+                <div class="prediction-content">
+                    <div class="teams">
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Arsenal" class="team-logo">
+                            <div class="team-name">Arsenal</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Chelsea" class="team-logo">
+                            <div class="team-name">Chelsea</div>
+                        </div>
+                    </div>
+                    <div class="prediction-result">BTTS & OVER 2.5</div>
+                    <div class="prediction-tag">Hot Tip</div>
+                </div>
+            </div>
+            
+            <!-- Prediction Card 4 -->
+            <div class="prediction-card" data-competition="laliga">
+                <div class="prediction-header">
+                    <div class="competition">
+                        <i class="fas fa-trophy"></i>
+                        <span>La Liga</span>
+                    </div>
+                    <div class="match-time">21:00</div>
+                </div>
+                <div class="prediction-content">
+                    <div class="teams">
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Real Madrid" class="team-logo">
+                            <div class="team-name">Real Madrid</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Sevilla" class="team-logo">
+                            <div class="team-name">Sevilla</div>
+                        </div>
+                    </div>
+                    <div class="prediction-result">HOME WIN</div>
+                    <div class="prediction-tag">Safe Bet</div>
+                </div>
+            </div>
+            
+            <!-- Prediction Card 5 -->
+            <div class="prediction-card" data-competition="bundesliga">
+                <div class="prediction-header">
+                    <div class="competition">
+                        <i class="fas fa-trophy"></i>
+                        <span>Bundesliga</span>
+                    </div>
+                    <div class="match-time">19:30</div>
+                </div>
+                <div class="prediction-content">
+                    <div class="teams">
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Bayern Munich" class="team-logo">
+                            <div class="team-name">Bayern Munich</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Dortmund" class="team-logo">
+                            <div class="team-name">Borussia Dortmund</div>
+                        </div>
+                    </div>
+                    <div class="prediction-result">OVER 3.5 GOALS</div>
+                    <div class="prediction-tag">Trending</div>
+                </div>
+            </div>
+            
+            <!-- Prediction Card 6 -->
+            <div class="prediction-card" data-competition="seriea">
+                <div class="prediction-header">
+                    <div class="competition">
+                        <i class="fas fa-trophy"></i>
+                        <span>Serie A</span>
+                    </div>
+                    <div class="match-time">20:45</div>
+                </div>
+                <div class="prediction-content">
+                    <div class="teams">
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Inter Milan" class="team-logo">
+                            <div class="team-name">Inter Milan</div>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="/api/placeholder/60/60" alt="Juventus" class="team-logo">
+                            <div class="team-name">Juventus</div>
+                        </div>
+                    </div>
+                    <div class="prediction-result">UNDER 2.5 GOALS</div>
+                    <div class="prediction-tag">Expert Pick</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <button>1</button>
+            <button class="active">2</button>
+            <button>3</button>
+            <button>4</button>
+            <button><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+    <div id="footer"></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

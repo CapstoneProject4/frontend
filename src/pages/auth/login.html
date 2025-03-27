@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="signupstyle.css">
+</head>
+<body>
+
+    <div class="intro">
+        <img src="../../../assets/tipsarena logo.jpg" alt="TIPSarena Logo">
+        <h2>Login to Your Account</h2>
+        <p>Enter your email and password to log in.</p>
+    </div>
+
+    <form>
+        <input type="email" placeholder="example@email.com" id="email" required>
+        <input type="password" placeholder="password" id="password" required>
+        <button id="signin" class="email_button">Login with email</button>
+    </form>
+
+    <div class="foo">
+        <span>or continue with</span>
+    </div>
+
+    <button id="google-signin" class="google_button">
+        <img src="../../../assets/google.jpg" width="60px" alt="Google Logo">
+        Google
+    </button>
+
+    <p class="terms">By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+
+    <div class="login">
+        <p>Don't have an Account? 
+            <a href="signup.html"><button class="signup_button">Sign Up</button></a>
+        </p>
+    </div>
+
+    <script type="module" src="../../../public/js/firebase-auth.js"></script>
+</body>
+</html>
